@@ -4,6 +4,8 @@ pipeline {
     stage('build') {
       steps {
         echo 'hello'
+        sh 'echo "second step"'
+        sleep 1
       }
     }
 
@@ -22,6 +24,12 @@ python --version'''
           }
         }
 
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        sh 'echo "deploying"'
       }
     }
 
