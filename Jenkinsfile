@@ -7,5 +7,12 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        sh '''echo "test running"
+python --version'''
+      }
+    }
+
   }
 }
