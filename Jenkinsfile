@@ -8,9 +8,20 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        sh '''echo "test running"
+      parallel {
+        stage('Test') {
+          steps {
+            sh '''echo "test running"
 python --version'''
+          }
+        }
+
+        stage('test1') {
+          steps {
+            echo 'testing 1'
+          }
+        }
+
       }
     }
 
